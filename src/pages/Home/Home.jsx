@@ -6,16 +6,17 @@ import Layout from '../../components/Layout/Layout.component';
 import Button from '../../components/Button/Button.component';
 import InputText from '../../components/Input/InputText/InputText.component';
 
-import imageHeader from '../../assets/imageHeader.png';
-import artigosPesca from '../../assets/artigosPesca.png';
-import artigosAgropecuaria from '../../assets/artigosAgropecuaria.png';
-import artigosEcossistemas from '../../assets/artigosEcossistemas.png';
-import frenteLoja from '../../assets/frenteLoja.jpg';
+import frenteLoja from '../../assets/frenteLoja.jpeg';
+import carro1 from '../../assets/carros1.jpeg';
+import carro2 from '../../assets/carros2.jpeg';
+import carro3 from '../../assets/carros3.jpeg';
 
 import isEmailValid from '../../@utils/isEmailValid';
 import isNumberValid from '../../@utils/isNumberValid';
 
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
+import { scrollToSection } from '../../components/NavBar/NavBar.component';
 
 function Home() {
 
@@ -101,9 +102,9 @@ function Home() {
     return (
         <Layout>
             {/* start section header */}
-            <section className={styles.containerLanding}>
+            <section className={styles.containerLanding} id="home">
                 <div className={styles.divImageLanding}>
-                    <img className={styles.imageLanding} src={frenteLoja} alt="frente da oja"/>
+                    <img className={styles.imageLanding} src={frenteLoja} alt="frente da loja"/>
                 </div>
                 <div className={styles.divInfoLanding}>
                     <div className={styles.cardInfoLanding}>
@@ -114,67 +115,56 @@ function Home() {
                             Confie na nossa expertise para guiá-lo na escolha do carro que melhor atenda às suas necessidades e expectativas.
                             Aproveite nossas condições especiais e leve para casa o carro dos seus sonhos!
                         </p>
-                        <Button title="Entre em contato!" className={styles.buttonLanding} onClick={() => navigate('#form')}/>
+                        <Button title="Entre em contato!" className={styles.buttonLanding} onClick={() => scrollToSection('formulario')}/>
                     </div>
                 </div>
             </section>
             {/* end section header */}
 
             {/* start section performance */}
-            <section className={styles.sectionPadding}>
+            <section className={styles.sectionPadding} id="nossosServiços">
                 <h2 className={styles.titlePerformance}>O que você vai encontrar aqui?</h2>
                 <div className={styles.divFlexPerformance}>
                     <div className={styles.divPerformanceLeft}>
                         <div className={styles.divPerformanceInfo}>
-                            <h3 className={styles.titlePerformanceInfoLeft}>Artigos de Pesca</h3>
-                            <p className={styles.paragraphPerformanceInfoLeft}>A área de artigos de 
-                            pesca é um verdadeiro paraíso para os amantes da pescaria. Oferecemos uma seleção 
-                            diversificada de equipamentos, desde varas e carretilhas de alta performance até iscas 
-                            artificiais e acessórios essenciais.</p>
-                            <p className={styles.paragraphPerformanceInfoLeft}>Cada produto é escolhido com rigor 
-                            para garantir durabilidade, precisão e eficiência em cada pescaria. Seja qual for o seu 
-                            estilo de pesca ou o seu nível de experiência, aqui você encontrará tudo o que precisa 
-                            para tornar suas jornadas na água ainda mais produtivas e prazerosas.</p>
+                            <h3 className={styles.titlePerformanceInfoLeft}>Carros</h3>
+                            <p className={styles.paragraphPerformanceInfoLeft}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in ex dapibus,
+                                auctor ligula sit amet, ullamcorper enim. Cras nec tempus quam. Nullam commodo 
+                                fermentum sem non convallis. Etiam nec luctus nibh. Mauris nisl nulla, viverra 
+                                sed tellus ut, congue pharetra orci.
+                            </p>
                         </div>
                         <div className={styles.divPerformanceImage}>
-                            <img className={styles.imagePerformance} src={artigosPesca} alt="artigosPesca" />
+                            <img className={styles.imagePerformance} src={carro1} alt="carros" />
                         </div>
                     </div>
                     <div className={styles.divPerformanceRight}>
                         <div className={styles.divPerformanceImage}>
-                            <img className={styles.imagePerformance} src={artigosAgropecuaria} alt="artigosAgropecuaria" />
+                            <img className={styles.imagePerformance} src={carro2} alt="artigosAgropecuaria" />
                         </div>
                         <div className={styles.divPerformanceInfo}>
-                            <h3 className={styles.titlePerformanceInfoRight}>Agropecuária</h3>
-                            <p className={styles.paragraphPerformanceInfoRight}>A seção de agropecuária é dedicada a 
-                            fornecer tudo o que você precisa para o cuidado e manejo eficiente do seu campo ou criação. 
-                            Oferecemos uma ampla gama de produtos, desde rações de alta qualidade e suplementos alimentares 
-                            até ferramentas e equipamentos agrícolas essenciais.</p>
-                            <p className={styles.paragraphPerformanceInfoRight}>Com foco na qualidade e no bem-estar animal, 
-                            nossos itens são escolhidos para garantir que você obtenha os melhores resultados em suas 
-                            atividades rurais. Seja na criação de gado, cultivo ou cuidados diários, estamos aqui para apoiar 
-                            o sucesso do seu negócio.</p>
-                            <p className={styles.paragraphPerformanceInfoRight}>Além dos produtos essenciais, também oferecemos 
-                            uma linha completa de soluções para irrigação, controle de pragas e fertilização, ajudando você a 
-                            maximizar a produtividade do seu campo. Nossos especialistas estão disponíveis para orientar e 
-                            recomendar os melhores produtos para suas necessidades específicas, garantindo que você tenha 
-                            acesso às tecnologias mais avançadas e práticas do mercado.</p>
+                            <h3 className={styles.titlePerformanceInfoRight}>Motos</h3>
+                            <p className={styles.paragraphPerformanceInfoRight}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in ex dapibus,
+                                auctor ligula sit amet, ullamcorper enim. Cras nec tempus quam. Nullam commodo 
+                                fermentum sem non convallis. Etiam nec luctus nibh. Mauris nisl nulla, viverra 
+                                sed tellus ut, congue pharetra orci.
+                            </p>
                         </div>
                     </div>
                     <div className={styles.divPerformanceLeft}>
                         <div className={styles.divPerformanceInfo}>
-                            <h3 className={styles.titlePerformanceInfoLeft}>Ecossistemas</h3>
-                            <p className={styles.paragraphPerformanceInfoLeft}>A seção de ecossistemas é dedicada 
-                            a fornecer soluções sustentáveis para o manejo e preservação de ambientes naturais. Oferecemos produtos 
-                            que auxiliam na manutenção de lagos, rios e outras áreas aquáticas, promovendo um equilíbrio saudável 
-                            e favorecendo a biodiversidade.</p>
-                            <p className={styles.paragraphPerformanceInfoLeft}>Desde plantas aquáticas nativas até sistemas de 
-                            filtragem e aeradores, nosso objetivo é ajudar você a criar e manter ecossistemas equilibrados e 
-                            prósperos. Seja para projetos de revitalização ou manutenção de habitats naturais, estamos prontos 
-                            para apoiar suas iniciativas ambientais.</p>
+                            <h3 className={styles.titlePerformanceInfoLeft}>Atendimento</h3>
+                            <p className={styles.paragraphPerformanceInfoLeft}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in ex dapibus,
+                                auctor ligula sit amet, ullamcorper enim. Cras nec tempus quam. Nullam commodo 
+                                fermentum sem non convallis. Etiam nec luctus nibh. Mauris nisl nulla, viverra 
+                                sed tellus ut, congue pharetra orci.
+                            </p>
                         </div>
                         <div className={styles.divPerformanceImage}>
-                            <img className={styles.imagePerformance} src={artigosEcossistemas} alt="artigosEcossistemas" />
+                            <img className={styles.imagePerformance} src={carro3} alt="artigosEcossistemas" />
                         </div>
                     </div>
                 </div>
@@ -182,17 +172,9 @@ function Home() {
             {/* end section performance */}
 
             {/* start section Location */}
-            <section className={styles.containerAboutJacare}>
+            <section className={styles.containerAboutJacare} id="localizacao">
                 <h2 className={styles.titleAboutJacare}>Onde estamos localizados?</h2>
                 <div className={styles.divAboutJacare}>
-                    <div className={styles.divTextAboutJacare}>
-                        <p className={styles.paragraphAboutJacare}>
-                            Localizados há mais de 10 anos no bairro Campos de São José, em São José 
-                            dos Campos. Nossa loja se consolidou na região como referência para pescadores, 
-                            produtores rurais e entusiastas da natureza, oferecendo uma ampla gama de produtos 
-                            com qualidade e confiança.
-                        </p>
-                    </div>
                     <div className={styles.divTextAboutJacare}>
                         <p className={styles.paragraphAboutJacareD}>
                         Avenida dos Pescadores, 1234,<br/>Campos de São José,<br/>São José dos Campos, SP.
@@ -203,7 +185,7 @@ function Home() {
             {/* end section Location */}
 
             {/* start Form */}
-            <section className={styles.sectionForm}>
+            <section className={styles.sectionForm} id="formulario">
                 {loading && (
                     <div className={styles.loadingForm}>
                         <AiOutlineLoading3Quarters className={styles.loading} />
@@ -220,7 +202,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
-                <form className={styles.form} id='formulario'>
+                <form className={styles.form}>
                     <div className={styles.containerGroupForm}>
                         <div className={styles.divInputForm}>
                             <label className={styles.labelForm}>Nome:</label>

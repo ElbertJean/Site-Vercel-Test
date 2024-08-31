@@ -12,7 +12,7 @@ function WhatsApp() {
             >
                 <FaWhatsapp 
                     className={styles.iconWhatsapp}
-                    onClick={() => window.open("https://api.whatsapp.com/send?phone=5512997091288")}
+                    onClick={() => window.open("https://api.whatsapp.com/send?phone=12997575004")}
                 />
             </button>
         </div>

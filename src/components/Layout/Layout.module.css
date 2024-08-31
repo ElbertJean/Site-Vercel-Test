@@ -6,3 +6,10 @@
 .content {
     padding: 0 32px 64px
 }
+
+@media screen and (width < 500px) {
+    .container {
+        padding: 128px 0 0px;
+        position: relative;
+    }
+}

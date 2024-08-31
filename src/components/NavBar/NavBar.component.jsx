@@ -3,17 +3,18 @@ import styles from './NavBar.module.css';
 import logo from '../../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
+export const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+
 const NavBar = () => {
 
     const navigate = useNavigate();
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-    
     return (
         <header className={styles.header}>
             <div className={styles.divTitle}>
