@@ -1,0 +1,47 @@
+.h2Products {
+    text-align: center;
+    font-size: 52px;
+    color: #222222;
+    margin: 32px 0px 64px;
+}
+
+.containerForm {
+    border: 2px solid #343A40;
+    width: 300px;
+    height: 270px;
+    margin: 0 auto;
+    padding: 32px 0;
+    border-radius: 8px;
+    background-color: #343A40;
+    border: 2px solid #000000
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.form > :last-child {
+    margin-top: 16px;
+}
+
+.divForm {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.labelInputForm {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.buttonDisabled {
+    border: 1px solid #222222 !important;
+    background-color: #6C757D !important;
+    cursor: not-allowed !important;
+    transition: 0.5s;
+    font-weight: bold;
+}
