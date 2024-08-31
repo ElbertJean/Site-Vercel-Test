@@ -25,6 +25,7 @@ function Home() {
     const [nomeValue, setNomeValue] = useState("");
     const [telValue, setTelValue] = useState("");
     const [emailValue, setEmailValue] = useState("");
+    const [cpfValue, setCpfValue] = useState("");
     const [messageValue, setMessageValue] = useState("");
 
     const [disabledButton, setDisabledButton] = useState(true);
@@ -34,15 +35,22 @@ function Home() {
     const [errorName, setErrorName] = useState(false);
     const [errorTel, setErrorTel] = useState(false);
     const [errorEmail, setErrorEmail] = useState(false);
+    const [errorCpf, setErrorCpf] = useState(false);
     const [errorMessage, setErrorMessage] = useState(false);
 
     useEffect(() => {
-        if (nomeValue.length > 0 && telValue.length > 0 && emailValue.length > 0 && messageValue.length > 0) {
+        if (
+            nomeValue.length > 0 && 
+            telValue.length > 0 && 
+            emailValue.length > 0 && 
+            messageValue.length > 0 && 
+            cpfValue.length > 0) 
+            {
             setDisabledButton(false);
         } else {
             setDisabledButton(true);
         }
-    },[nomeValue, telValue, emailValue, messageValue]);
+    },[nomeValue, telValue, emailValue, messageValue, cpfValue]);
 
     const HandleSendEmail = async (e) => {
         e.preventDefault();
@@ -52,14 +60,16 @@ function Home() {
         const nameValid = nomeValue.length > 1;
         const emailValid = isEmailValid(emailValue);
         const telValid = isNumberValid(telValue);
+        const cpfValid = cpfValue.length === 11;
         const messageValid = messageValue.length >= 20;
-    
+        
         setErrorName(!nameValid);
         setErrorEmail(!emailValid);
         setErrorTel(!telValid);
+        setErrorCpf(!cpfValid);
         setErrorMessage(!messageValid);
     
-        if (!nameValid || !emailValid || !telValid || !messageValid) {
+        if (!nameValid || !emailValid || !telValid || !messageValid || !cpfValid) {
             setLoading(false);
             return;
         }
@@ -74,6 +84,7 @@ function Home() {
                     nome: nomeValue,
                     telefone: telValue,
                     email: emailValue,
+                    cpf: cpfValue,
                     mensagem: messageValue,
                 }),
             });
@@ -84,10 +95,12 @@ function Home() {
                 setNomeValue("");
                 setTelValue("");
                 setEmailValue("");
+                setCpfValue("");
                 setMessageValue("");
 
                 setErrorTel(false);
                 setErrorEmail(false);
+                setCpfValue(false);
             } else {
                 alert('Falha ao enviar o email.');
             }
@@ -235,16 +248,16 @@ function Home() {
                             {errorEmail && <span className={styles.error}>Insira um email valido</span>}
                         </div>
                         {/* arrumar a validação disso aqui */}
-                        {/* <div className={styles.divInputForm}>
+                        <div className={styles.divInputForm}>
                             <label className={styles.labelForm}>CPF:</label>
                             <InputText
                                 placeholder="123.456.789-00" 
                                 className={styles.inputForm}
-                                onChange={(e) => setEmailValue(e.target.value)}
-                                value={emailValue}
+                                onChange={(e) => setCpfValue(e.target.value)}
+                                value={cpfValue}
                                 />
-                            {errorEmail && <span className={styles.error}>Insira um email valido</span>}
-                        </div> */}
+                            {errorCpf && <span className={styles.error}>Insira um cpf válido</span>}
+                        </div>
                         <div className={styles.divInputForm}>
                             <label className={styles.labelForm}>Mensagem:</label>
                             <textarea 
